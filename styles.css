@@ -32,9 +32,9 @@ body{
 #box_senha{
         margin-top:100px;
         border-radius:20px;
-        background-color:rgb(244, 174, 174);
+        background-color:rgb(29, 29, 29);
         height: 50px;
-        width: 400px;
+        width: 500px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -54,9 +54,100 @@ body{
         dentro do contêiner */
         cursor: pointer;
         right: 10px;
-        top: 10%;
-       
+        top: 10%;      
 }
+
 .input-container{
         position: relative; /* Permite que o ícone use position absolute em relação a este contêiner */  
 }
+
+/* ----- EXERCICIO CONFIRMAR SENHA ----- */
+#box_confirmar_senha{
+        margin-top:20px;
+        border-radius:20px;
+        background-color:rgb(29, 29, 29);
+        height: 50px;
+        width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+.input_confirmar_senha{
+
+        width: 200px;;
+        padding:3px;
+}
+.input_container_confirmar_senha{
+        position: relative; /* Permite que o ícone use position absolute em relação a este contêiner */  
+}
+#icone_confirmar_senha_n_visivel{
+        position: absolute; /* Posiciona o ícone 
+        dentro do contêiner */
+        cursor: pointer;
+        right: 10px;
+        top: 10%;  
+}
+
+#botao_confirmar_senha{
+        /* margin-top: 20px; */
+        margin-left: 20px;
+        cursor: pointer;
+        border: none;
+        background-color: #4CAF50; 
+        color: white;
+        border-radius: 5px;
+        padding: 7px;   
+}
+.error {
+        border: 2px solid red !important; /* Garante que a borda seja vermelha */
+      }
+#mensagem_erro{
+        color: red;
+}
+
+
+/* MINI CALCULADORA */
+.container_calculadora {
+        margin-top: 50px;
+        background-color: rgb(186, 189, 188);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .input-container {
+        margin: 10px;
+    }
+    
+    .campo_entrada {
+        padding: 10px;
+        font-size: 16px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    .botoes-container {
+        margin: 20px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .btn:hover {
+        background-color: #19cc28;
+    }
+    
+    .mensagem_resutado {
+        font-size: 20px;
+        margin-top: 20px;
+        color:rgb(27, 201, 41);
+    }

@@ -15,6 +15,7 @@
     </div>
     <button id ="ligar_desligar" onclick = "alterar_lampada()">Ligar/ Desligar</button>
 
+
     <form id = "box_senha">
         <label id ="text_senha">Senha:</label>
         <div class="input-container">
@@ -22,5 +23,41 @@
             <img id = "icone_senha_n_visivel" src="imgs/senha_n_visivel.png" height="20px", width="20px" onclick="status_senha()">
         </div>
     </form>
+
+    <!-- Confirmar_senha -->
+    <form id = "box_confirmar_senha">
+        <label id ="text_senha">Confirmar senha:</label>
+
+        <div class="input_container_confirmar_senha">
+            <input class = input_confirmar_senha type="password" id = confirmar_senha placeholder="Confirme sua senha">
+            <img id = "icone_confirmar_senha_n_visivel" src="imgs/senha_n_visivel.png" height="20px", width="20px" onclick="status_confirmar_senha()">
+        </div>
+        <button type ="button" id ="botao_confirmar_senha" onclick="verificar_senhas()">Verificar Senhas</button>
+        <div><p id="mensagem_erro" ></p></div>
+    </form>
+
+
+    <!-- MINI CALCULADORA -->
+    <div class="container_calculadora">
+        <h1>Mini Calculadora</h1>
+        <div class="input-container">
+            <label for="valor1">Valor 1:</label>
+            <input type="number" id="valor1" class="campo_entrada" placeholder="Digite o primeiro valor">
+        </div>
+        <div class="input-container">
+            <label for="valor2">Valor 2:</label>
+            <input type="number" id="valor2" class="campo_entrada" placeholder="Digite o segundo valor">
+        </div>
+        <div class="botoes-container">
+            <button class="btn" onclick="calcular('add')">+</button>
+            <button class="btn" onclick="calcular('sub')">-</button>
+            <button class="btn" onclick="calcular('mul')">*</button>
+            <button class="btn" onclick="calcular('div')">/</button>
+        </div>
+        <p class="mensagem_resultado"></p>
+    </div>
+
 </body>
 </html>
+
+
