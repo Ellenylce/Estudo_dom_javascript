@@ -1,0 +1,62 @@
+/* ----- EXERCICIO LAMPADA ---- */
+#lampada {
+        /* Define a imagem inicial */
+        background-image: url('imgs/lampada_desligada.png');
+    }
+h1{
+        font-size: 20px;
+        margin-bottom:10px;
+}
+body{
+        background-color: black;
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+       
+}
+#ligar_desligar{
+        margin-top: 20px;
+        cursor: pointer;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+}
+
+/* ---- EXERCICIO VISUALIZAR SENHA ----> */
+#icone_senha_n_visivel{
+        background-image: url("imgs/ icone_senha_visivel");
+}
+#box_senha{
+        margin-top:100px;
+        border-radius:20px;
+        background-color:rgb(244, 174, 174);
+        height: 50px;
+        width: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+#text_senha{
+        color: white;
+        margin-right: 10px;
+}
+
+.input_senha{
+
+        width: 200px;;
+        padding:3px;
+}
+#icone_senha_n_visivel{
+        position: absolute; /* Posiciona o ícone 
+        dentro do contêiner */
+        cursor: pointer;
+        right: 10px;
+        top: 10%;
+       
+}
+.input-container{
+        position: relative; /* Permite que o ícone use position absolute em relação a este contêiner */  
+}

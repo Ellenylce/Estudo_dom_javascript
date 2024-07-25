@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <h1>Controle da lampada na página</h1> 
+    <div id = box_lampada>
+        <!-- onclick é um evento - ao clicar no botão acontece um evento através da função alterar_lampada -->
+        <img id = "lampada" src="imgs/lampada_desligada.png">
+    </div>
+    <button id ="ligar_desligar" onclick = "alterar_lampada()">Ligar/ Desligar</button>
+
+    <form id = "box_senha">
+        <label id ="text_senha">Senha:</label>
+        <div class="input-container">
+            <input class = input_senha type="password" id = senha placeholder="Digite sua senha">
+            <img id = "icone_senha_n_visivel" src="imgs/senha_n_visivel.png" height="20px", width="20px" onclick="status_senha()">
+        </div>
+    </form>
+</body>
+</html>
