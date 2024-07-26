@@ -61,25 +61,170 @@ function status_confirmar_senha(){
   }
 }
 
-// verificar senha
- function verificar_senhas(){
-  
+// document.getElementById('senha'): Seleciona o elemento HTML com o ID senha.
+// .value: Obtém o valor inserido pelo usuário no campo de senha e armazena na constante senha.
+// mesma coisa com os demais
+//sem o value: Aqui, apenas o elemento é obtido sem acessar o seu valor imediatamente. 
+// para manipular o elemento posteriormente (por exemplo, adicionar classes CSS).
+function verificar_senhas() {
   const senha = document.getElementById('senha').value;
-  const confirmar_senha = document.getElementById('confirmar_senha').value;
-  const mensagem_erro = document.getElementById('mensagem_erro');
+  const confirmarSenha = document.getElementById('confirmar_senha'); //sem o value
+  const mensagemErro = document.getElementById('mensagem_erro');
+  // document.getElementById('mensagem_erro'): Seleciona o elemento HTML com o ID mensagem_erro, onde a mensagem de erro será exibida se as senhas não coincidirem.
 
-  if(senha !== confirmar_senha){
-    mensagem_erro.textContent = 'As senhas não coincidem';
-    // confirmar_senha.classList.add ('error');
-    confirmar_senha.focus();
-  }else{
-    mensagem_erro.textContent = '';
-    confirmar_senha.classList.remove('error');
-    
-    }
+
+  // senha !== confirmarSenha.value: Compara o valor da senha com o valor do campo de confirmação de senha. Se os valores não forem iguais, o código dentro do bloco if será executado: "as senhas não coincidem".
+  // mensagemErro.textContent = 'As senhas não coincidem';: Define o conteúdo de texto do elemento mensagem_erro para a mensagem de erro "As senhas não coincidem".
+  // confirmarSenha.classList.add('error');: Adiciona a classe CSS error ao elemento de confirmação de senha. Esta classe pode ser usada para estilizar o campo de entrada (por exemplo, adicionando uma borda vermelha).
+  // confirmarSenha.focus();: Coloca o foco no campo de confirmação de senha, destacando-o para o usuário.
+  if (senha !== confirmarSenha.value) {
+    mensagemErro.textContent = 'As senhas não coincidem';
+    confirmarSenha.classList.add('error');
+    confirmarSenha.focus();
+  } else {
+    mensagemErro.textContent = '';
+    confirmarSenha.classList.remove('error');
   }
- 
+  // mensagemErro.textContent = '';: Limpa o conteúdo de texto do elemento mensagem_erro, removendo qualquer mensagem de erro exibida anteriormente.
+// confirmarSenha.classList.remove('error');: Remove a classe CSS error do elemento de confirmação de senha, caso ela tenha sido adicionada anteriormente.
+}
+
+
+
+// ----CALCULADORA -----
+
   // Crie uma mini calculadora em que o usuário coloca 2 valores e escolhe uma operação e obtém o resultado. Use o lançamento de exceções quando aplicável.
+  function calcular_soma() {
+    // Obtém os valores dos campos de entrada
+    // document.getElementById('valor1'): Seleciona o elemento com o ID valor1 e retorna uma referência a esse elemento.
+    // value: Obtém o valor do campo de entrada, que é uma string.
+    // parseFloat: Converte a string para um número de ponto flutuante.
+    const valor1 = parseFloat(document.getElementById('valor1').value);
+    const valor2 = parseFloat(document.getElementById('valor2').value);
+    const resultado = document.getElementById('resultado');
+
+    // Verifica se os valores são números válidos
+    // isNaN(valor1) || isNaN(valor2):Verifica se algum dos valores não é um número válido.
+    // innerHTML:Define o conteúdo HTML do elemento resultado.
+    if (isNaN(valor1) || isNaN(valor2)) {
+        resultado.innerHTML = 'Por favor, insira valores numéricos válidos.';
+        resultado.style.color = 'red';
+        return;
+    }
+
+    // Calcula a soma e exibe o resultado
+    const soma = valor1 + valor2;
+    resultado.innerHTML = `Resultado: ${soma}`;
+    resultado.style.color = 'green';
+}
+
+function calcular_sub() {
+  // Obtém os valores dos campos de entrada
+  // document.getElementById('valor1'): Seleciona o elemento com o ID valor1 e retorna uma referência a esse elemento.
+  // value: Obtém o valor do campo de entrada, que é uma string.
+  // parseFloat: Converte a string para um número de ponto flutuante.
+  const valor1 = parseFloat(document.getElementById('valor1').value);
+  const valor2 = parseFloat(document.getElementById('valor2').value);
+  const resultado = document.getElementById('resultado');
+
+  // Verifica se os valores são números válidos
+  // isNaN(valor1) || isNaN(valor2):Verifica se algum dos valores não é um número válido.
+  // innerHTML:Define o conteúdo HTML do elemento resultado.
+  if (isNaN(valor1) || isNaN(valor2)) {
+      resultado.innerHTML = 'Por favor, insira valores numéricos válidos.';
+      resultado.style.color = 'red';
+      return;
+  }
+
+  // Calcula a subtração e exibe o resultado
+  const sub = valor1 - valor2;
+  resultado.innerHTML = `Resultado: ${sub}`;
+  resultado.style.color = 'green';
+}
+
+
+
+function calcular_mult() {
+  // Obtém os valores dos campos de entrada
+  // document.getElementById('valor1'): Seleciona o elemento com o ID valor1 e retorna uma referência a esse elemento.
+  // value: Obtém o valor do campo de entrada, que é uma string.
+  // parseFloat: Converte a string para um número de ponto flutuante.
+  const valor1 = parseFloat(document.getElementById('valor1').value);
+  const valor2 = parseFloat(document.getElementById('valor2').value);
+  const resultado = document.getElementById('resultado');
+
+  // Verifica se os valores são números válidos
+  // isNaN(valor1) || isNaN(valor2):Verifica se algum dos valores não é um número válido.
+  // innerHTML:Define o conteúdo HTML do elemento resultado.
+  if (isNaN(valor1) || isNaN(valor2)) {
+      resultado.innerHTML = 'Por favor, insira valores numéricos válidos.';
+      resultado.style.color = 'red';
+      return;
+  }
+
+  // Calcula a multiplicação e exibe o resultado
+  const mult = valor1 * valor2;
+  resultado.innerHTML = `Resultado: ${mult}`;
+  resultado.style.color = 'green';
+}
+
+
+function calcular_div() {
+  // Obtém os valores dos campos de entrada
+  // document.getElementById('valor1'): Seleciona o elemento com o ID valor1 e retorna uma referência a esse elemento.
+  // value: Obtém o valor do campo de entrada, que é uma string.
+  // parseFloat: Converte a string para um número de ponto flutuante.
+  const valor1 = parseFloat(document.getElementById('valor1').value);
+  const valor2 = parseFloat(document.getElementById('valor2').value);
+  const resultado = document.getElementById('resultado');
+
+  try {
+    // Verifica se os valores são números válidos
+    // isNaN(valor1) || isNaN(valor2): Verifica se algum dos valores não é um número válido.
+    // innerHTML: Define o conteúdo HTML do elemento resultado.
+    if (isNaN(valor1) || isNaN(valor2)) {
+        resultado.innerHTML = 'Por favor, insira valores numéricos válidos.';
+        resultado.style.color = 'red';
+        return;
+    }
+
+    // Verifica se o divisor é zero
+    // valor2 === 0: Verifica se o segundo valor é zero.
+    if (valor2 === 0) {
+        throw new Error('Divisão por zero não é permitida.');
+    }
+
+    // Calcula a divisão e exibe o resultado
+    // div: Calcula o quociente entre valor1 e valor2.
+    // innerHTML: Define o conteúdo HTML do elemento resultado.
+    const div = valor1 / valor2;
+    resultado.innerHTML = `Resultado: ${div}`;
+    resultado.style.color = 'green';
+
+  } catch (error) {
+    // Exibe mensagens de erro
+    // error.message: Obtém a mensagem de erro lançada pelo throw.
+    resultado.innerHTML = error.message;
+    resultado.style.color = 'red';
+  }
+}
+
+// ----- BOAS VINDAS ----
+function mostrar_boas_vindas() {
+  const nome = document.getElementById('nome').value;
+  const mensagem = document.getElementById('mensagem');
+  mensagem.textContent = `Olá, ${nome}! Seja bem-vindo(a)!`; //Atualiza o conteúdo de mensagem: A propriedade textContent do elemento mensagem é alterada para o valor da string entre as aspas.
+}
+
+
+
+
+
+
+
+
+
+
 
 
   
@@ -90,138 +235,3 @@ function status_confirmar_senha(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-//   function calcular(operacao) {
-//     const valor1 = parseFloat(document.getElementById('valor1').value);
-//     const valor2 = parseFloat(document.getElementById('valor2').value);
-//     const resultado = document.getElementById('resultado');
-
-//     try {
-//         if (isNaN(valor1) || isNaN(valor2)) {
-//             throw new Error('Por favor, insira dois valores numéricos.');
-//         }
-
-//         let resultadoFinal;
-
-//         switch (operacao) {
-//             case 'add':
-//                 resultadoFinal = valor1 + valor2;
-//                 break;
-//             case 'sub':
-//                 resultadoFinal = valor1 - valor2;
-//                 break;
-//             case 'mul':
-//                 resultadoFinal = valor1 * valor2;
-//                 break;
-//             case 'div':
-//                 if (valor2 === 0) {
-//                     throw new Error('Divisão por zero não é permitida.');
-//                 }
-//                 resultadoFinal = valor1 / valor2;
-//                 break;
-//             default:
-//                 throw new Error('Operação inválida.');
-//         }
-
-//         resultado.textContent = `Resultado: ${resultadoFinal}`;
-//         resultado.style.color = 'green';
-
-//     } catch (error) {
-//         resultado.textContent = `Erro: ${error.message}`;
-//         resultado.style.color = 'red';
-//     }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// }
-
-// function validarSenha() {
-  // // const senha = document.getElementById('senha').value;
-  // const confirmarSenha = document.getElementById('confirmar_senha').value;   
-
-
-  // const mensagemErro = document.getElementById('mensagem_erro');
-
-  // if (senha !== confirmarSenha) {
-  //   mensagemErro.textContent = 'As senhas não coincidem.';
-  //   confirmarSenha.classList.add('error');
-  //   confirmarSenha.focus();
-  // } else {
-  //   mensagemErro.textContent = ''; // Limpa a mensagem de erro
-  //   confirmarSenha.classList.remove('error');
-  // }
-
-
-
-
-
-// // function status_senha(inputId, iconId) {
-//   const senha = document.getElementById(inputId);
-//   const status_icone = document.getElementById(iconId);
-
-//   if (senha.type === "password") {
-//       senha.type = "text";
-//       status_icone.src = "imgs/senha_visivel.png";
-//   } else {
-//       senha.type = "password";
-//       status_icone.src = "imgs/senha_n_visivel.png";
-//   }
-
-
-// function verificarSenhas() {
-//   const senha = document.getElementById('senha').value;
-//   const confirmarSenha = document.getElementById('confirmar-senha').value;
-//   const mensagem = document.getElementById('mensagem');
-//   const confirmarSenhaInput = document.getElementById('confirmar-senha');
-
-//   if (senha && confirmarSenha) {
-//       if (senha === confirmarSenha) {
-//           mensagem.textContent = 'As senhas coincidem.';
-//           mensagem.style.color = 'green';
-//           confirmarSenhaInput.classList.remove('error');
-//       } else {
-//           mensagem.textContent = 'As senhas não coincidem.';
-//           mensagem.style.color = 'red';
-//           confirmarSenhaInput.classList.add('error');
-//           confirmarSenhaInput.focus(); // Focar no campo de confirmação de senha
-//       }
-//   } else {
-//       mensagem.textContent = 'Por favor, preencha ambos os campos de senha.';
-//       mensagem.style.color = 'red';
-//       confirmarSenhaInput.classList.add('error');
-//       confirmarSenhaInput.focus(); // Focar no campo de confirmação de senha
-//   }
-// }
-
-// function focarNoCampoSenha() {
-//   const senha = document.getElementById('senha');
-//   senha.focus();
-// }
